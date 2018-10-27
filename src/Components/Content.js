@@ -5,6 +5,19 @@ class Content extends React.Component {
     super(props);
   }
 
+  componentDidMount () {
+    var CLIENT_ID = getUrlVars()['access_token'];
+    console.log(client_id);
+  }
+
+  getUrlVars() {
+    var vals = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vals[key] = value;
+    });
+    return vals;
+  }
+
   render() {
     return (
       <div>
